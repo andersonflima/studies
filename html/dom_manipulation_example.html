@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation Example</title>
+</head>
+<body>
+    <h1 id="main-title">Hello, World!</h1>
+    <button id="change-title">Change Title</button>
+
+    <div id="content">
+        <p>This is a paragraph.</p>
+        <button id="add-paragraph">Add Paragraph</button>
+    </div>
+
+    <script>
+        // Change the title text when the button is clicked
+        document.getElementById('change-title').addEventListener('click', function() {
+            document.getElementById('main-title').textContent = 'Title Changed!';
+        });
+
+        // Add a new paragraph when the button is clicked
+        document.getElementById('add-paragraph').addEventListener('click', function() {
+            const newParagraph = document.createElement('p');
+            newParagraph.textContent = 'This is a new paragraph.';
+            document.getElementById('content').appendChild(newParagraph);
+        });
+    </script>
+</body>
+</html>
