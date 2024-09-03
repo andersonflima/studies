@@ -1,31 +1,94 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DOM Manipulation Example</title>
-</head>
-<body>
-    <h1 id="main-title">Hello, World!</h1>
-    <button id="change-title">Change Title</button>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f0f0f0;
+      }
 
-    <div id="content">
+      #container {
+        background-color: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+
+      h1 {
+        color: #333;
+      }
+
+      button {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        margin: 10px;
+        cursor: pointer;
+        border-radius: 4px;
+        transition: background-color 0.3s ease;
+      }
+
+      button:hover {
+        background-color: #0056b3;
+      }
+
+      p {
+        font-size: 16px;
+        color: #555;
+      }
+
+      .highlight {
+        background-color: #ffff00;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <h1 id="main-title">Hello, World!</h1>
+      <button id="change-title">Change Title</button>
+      <button id="toggle-highlight">Toggle Highlight</button>
+
+      <div id="content">
         <p>This is a paragraph.</p>
         <button id="add-paragraph">Add Paragraph</button>
+      </div>
     </div>
 
     <script>
-        // Change the title text when the button is clicked
-        document.getElementById('change-title').addEventListener('click', function() {
-            document.getElementById('main-title').textContent = 'Title Changed!';
+      // Change the title text when the button is clicked
+      document
+        .getElementById("change-title")
+        .addEventListener("click", function () {
+          document.getElementById("main-title").textContent = "Title Changed!";
         });
 
-        // Add a new paragraph when the button is clicked
-        document.getElementById('add-paragraph').addEventListener('click', function() {
-            const newParagraph = document.createElement('p');
-            newParagraph.textContent = 'This is a new paragraph.';
-            document.getElementById('content').appendChild(newParagraph);
+      // Add a new paragraph when the button is clicked
+      document
+        .getElementById("add-paragraph")
+        .addEventListener("click", function () {
+          const newParagraph = document.createElement("p");
+          newParagraph.textContent = "This is a new paragraph.";
+          document.getElementById("content").appendChild(newParagraph);
+        });
+
+      // Toggle highlight for paragraphs when the button is clicked
+      document
+        .getElementById("toggle-highlight")
+        .addEventListener("click", function () {
+          const paragraphs = document.querySelectorAll("#content p");
+          paragraphs.forEach((paragraph) => {
+            paragraph.classList.toggle("highlight");
+          });
         });
     </script>
-</body>
+  </body>
 </html>
