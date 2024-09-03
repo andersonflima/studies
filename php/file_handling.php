@@ -1,23 +1,29 @@
 <?php
 // File Handling in PHP
 
-// Writing to a file
-file_put_contents('example.txt', "Hello, world!\n");
+// 1. Writing to a File
+$file = fopen("example.txt", "w");
+fwrite($file, "Hello, world!\n");
+fclose($file);
 
-// Reading from a file
-$content = file_get_contents('example.txt');
-echo $content;
+// 2. Reading from a File
+$file = fopen("example.txt", "r");
+$content = fread($file, filesize("example.txt"));
+fclose($file);
+echo "File Content:\n$content\n";
 
-// Working with CSV files
-$csvFile = fopen('data.csv', 'w');
-fputcsv($csvFile, ['Name', 'Age', 'City']);
-fputcsv($csvFile, ['Alice', '30', 'New York']);
-fputcsv($csvFile, ['Bob', '25', 'Los Angeles']);
+// 3. Appending to a File
+$file = fopen("example.txt", "a");
+fwrite($file, "Appending a new line.\n");
+fclose($file);
+
+// 4. Working with CSV Files
+$csvFile = fopen("data.csv", "w");
+fputcsv($csvFile, ["Name", "Age", "City"]);
+fputcsv($csvFile, ["Alice", "30", "New York"]);
+fputcsv($csvFile, ["Bob", "25", "Los Angeles"]);
 fclose($csvFile);
 
-$csvFile = fopen('data.csv', 'r');
-while (($row = fgetcsv($csvFile)) !== FALSE) {
-    print_r($row);
-}
-fclose($csvFile);
-?>
+// Reading from a CSV File
+$csvFile = fopen("data.csv", "r");
+while (($row = fgetcsv($
