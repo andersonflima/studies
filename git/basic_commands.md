@@ -37,3 +37,15 @@ These are some basic Git commands to help you get started with version control.
     git log
     ```
     Displays the commit history for the repository.
+
+7. **Fetch**
+    ```bash
+    git fetch
+    ```
+    Recupera as últimas alterações do repositório remoto, mas não faz merge automaticamente.
+
+8. **Branch**
+    ```bash
+    git branch
+    ```
+    Lista todas as branchs locais e destaca a branch atual.
