@@ -49,3 +49,9 @@ These are some basic Git commands to help you get started with version control.
     git branch
     ```
     Lista todas as branchs locais e destaca a branch atual.
+
+9. **Pull**
+    ```bash
+    git pull
+    ```
+    Atualiza o repositório local com as alterações do repositório remoto.
