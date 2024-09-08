@@ -55,3 +55,9 @@ These are some basic Git commands to help you get started with version control.
     git pull
     ```
     Atualiza o repositório local com as alterações do repositório remoto.
+
+10. **Status**
+    ```bash
+    git status
+    ```
+    Atualiza o repositório local com as alterações do repositório remoto.
